@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.7.34018.315
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CineApi", "CineApi\CineApi.csproj", "{E82CF37E-79E7-4C3E-B3EB-ECC81D713D62}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataCineDb", "DataCineDb\DataCineDb.csproj", "{81607D1D-45E0-46CD-B6B6-0126900E1C05}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E82CF37E-79E7-4C3E-B3EB-ECC81D713D62}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E82CF37E-79E7-4C3E-B3EB-ECC81D713D62}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E82CF37E-79E7-4C3E-B3EB-ECC81D713D62}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E82CF37E-79E7-4C3E-B3EB-ECC81D713D62}.Release|Any CPU.Build.0 = Release|Any CPU
+		{81607D1D-45E0-46CD-B6B6-0126900E1C05}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{81607D1D-45E0-46CD-B6B6-0126900E1C05}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{81607D1D-45E0-46CD-B6B6-0126900E1C05}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{81607D1D-45E0-46CD-B6B6-0126900E1C05}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E8EE4694-E24F-41F8-B139-52A89B8FBA37}
+	EndGlobalSection
+EndGlobal
