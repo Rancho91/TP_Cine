@@ -10,7 +10,11 @@ namespace DataCineDb.Entidades
     {
         public int Codigo { get; set; }
         public string Clasificacion { get; set; }
-
+        public Clasificaciones()
+        {
+            Codigo = 0;
+            Clasificacion = string.Empty;
+        }
         public Clasificaciones(string clasifiacion)
         {
             this.Clasificacion = clasifiacion;
@@ -21,5 +25,6 @@ namespace DataCineDb.Entidades
             this.Clasificacion = clasifiacion;
             this.Codigo = codigo;
         }
+
     }
 }

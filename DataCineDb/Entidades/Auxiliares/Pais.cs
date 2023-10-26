@@ -11,6 +11,11 @@ namespace DataCineDb.Entidades
         public int Codigo { get; set; }
         public string Pais { get; set; }
 
+        public Paises()
+        {
+            Codigo = 0;
+            Pais = string.Empty;
+        }
         public Paises(string pais)
         {
             this.Pais = pais;

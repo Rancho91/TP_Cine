@@ -74,5 +74,47 @@ namespace DataCineDb.Data
             return dt;
 
         }
+
+        public void Insertar(string sp, List<Parametros> param, SqlTransaction t)
+        {
+  
+            SqlCommand cmd = new SqlCommand(sp, conexion, t);
+            cmd.CommandType = CommandType.StoredProcedure;
+            foreach (Parametros p in param)
+            {
+                cmd.Parameters.AddWithValue(p.Nombre, p.Valor);
+            }
+            cmd.ExecuteNonQuery();
+        }
+        public void Insertar(string sp, List<Parametros> param )
+        {
+        
+            SqlCommand cmd = new SqlCommand(sp, conexion);
+            cmd.CommandType = CommandType.StoredProcedure;
+            foreach (Parametros p in param)
+            {
+                cmd.Parameters.AddWithValue(p.Nombre, p.Valor);
+            }
+            cmd.ExecuteNonQuery();
+        }
+        public int InsertarNumeroFactura(string sp, string param, SqlTransaction t, List<Parametros> parametros)
+        {
+   
+            SqlCommand cmd = new SqlCommand(sp, conexion,t);
+            cmd.CommandType = CommandType.StoredProcedure;
+            SqlParameter parameter = new SqlParameter(param, SqlDbType.Int);
+            parameter.Direction = ParameterDirection.Output;
+            cmd.Parameters.Add(parameter);
+            foreach (Parametros p in parametros)
+            {
+                cmd.Parameters.AddWithValue(p.Nombre, p.Valor);
+            }            
+          
+
+            cmd.ExecuteNonQuery();
+  int nroFactura = (int)parameter.Value;
+            return nroFactura;
+        }
+
     }
 }

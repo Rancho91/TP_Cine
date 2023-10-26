@@ -10,6 +10,11 @@ namespace DataCineDb.Entidades.Auxiliares
     {
         public int Codigo { get; set; }
         public string Idioma { get; set; }
+        public Idiomas()
+        {
+            Codigo = 0;
+            Idioma = string.Empty;
+        }
         public Idiomas(string idioma)
         {
             Idioma = idioma;
@@ -19,5 +24,6 @@ namespace DataCineDb.Entidades.Auxiliares
             Codigo = codigo;
             Idioma = idioma;
         }
+
     }
 }

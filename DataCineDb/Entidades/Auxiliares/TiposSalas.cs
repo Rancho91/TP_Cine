@@ -10,6 +10,10 @@ namespace DataCineDb.Entidades.Auxiliares
     {
         public int Codigo { get; set; }
         public string Tipo { get; set; }
+        public TiposSalas()
+        {
+
+        }
         public TiposSalas(string tipo)
         {
             Tipo = tipo;
@@ -19,5 +23,6 @@ namespace DataCineDb.Entidades.Auxiliares
             Codigo = codigo;
             Tipo = tipo;
         }
+
     }
 }

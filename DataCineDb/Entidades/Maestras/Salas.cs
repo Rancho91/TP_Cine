@@ -14,6 +14,11 @@ namespace DataCineDb.Entidades.Maestras
         public TiposSalas Tipo { get; set; }
         public List<Funciones> Funciones { get; set; }
 
+        public Salas()
+        {
+            Funciones = new List<Funciones>();
+        }
+
         public Salas(int numero, TiposSalas tipo)
         {
             Numero = numero;
@@ -40,5 +45,5 @@ namespace DataCineDb.Entidades.Maestras
             Funciones.RemoveAt(index);
         }
         }
-    }
+    
 }

@@ -15,6 +15,16 @@ namespace DataCineDb.Entidades.Maestras
         public Paises Pais { get; set; }
 
         public TimeSpan Duracion { get; set; }
+        public Pelicula()
+        {
+            Codigo = 0;
+            Nombre=string.Empty;
+            Genero = new Generos();
+            Clasificacion = new Clasificaciones();
+            Pais = new Paises();
+
+            Duracion = TimeSpan.FromHours(2) + TimeSpan.FromMinutes(30);
+        }
 
         public Pelicula(int codigo, string nombre, Generos genero, Clasificaciones clasificacion, Paises pais, TimeSpan duracion)
         {
@@ -26,13 +36,7 @@ namespace DataCineDb.Entidades.Maestras
             Duracion = duracion;
 
         }
-        public Pelicula()
-        {
-            Codigo=0;
-            Nombre = string.Empty;
-            Duracion = TimeSpan.Zero;
 
-            //Duracion = TimeSpan.FromHours(2) + TimeSpan.FromMinutes(30)
-        }
+    
     }
 }

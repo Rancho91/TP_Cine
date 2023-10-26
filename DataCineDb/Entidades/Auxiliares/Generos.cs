@@ -10,6 +10,11 @@ namespace DataCineDb.Entidades
     {
         public int Codigo { get; set; }
         public  string Genero { get; set; }
+        public Generos()
+        {
+            Codigo = 0;
+            Genero = string.Empty;
+        }
         public Generos(string gnro)
         {
             this.Genero = gnro;
@@ -20,5 +25,6 @@ namespace DataCineDb.Entidades
             this.Genero = genero;
             this.Codigo = codigo;
         }
+
     }
 }
