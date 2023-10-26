@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "hH47I/5mBCUoeVUfT6nN3SuAZR11cL0Um/V7E3uOJ+u+dH3ou9iMIE8oqP/fQOkbcPFbl0JNHTwuVftVDxyyFA==",
+  "dgSpecHash": "2nNGGTjHPnQ0fSxIxAzvtww94WJzivBnb7MiREz3p6QAqZtuPUTYrYNHw6Yr+jyIE+s5tLd1bUnmfnIh3KszWg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\ramir\\source\\repos\\CineApi\\DataCineDb\\DataCineDb.csproj",
+  "projectFilePath": "C:\\Users\\ramir\\Desktop\\Proyectos Facu\\CineApi\\DataCineDb\\DataCineDb.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\ramir\\.nuget\\packages\\microsoft.netcore.platforms\\3.1.0\\microsoft.netcore.platforms.3.1.0.nupkg.sha512",
     "C:\\Users\\ramir\\.nuget\\packages\\microsoft.win32.registry\\4.7.0\\microsoft.win32.registry.4.7.0.nupkg.sha512",

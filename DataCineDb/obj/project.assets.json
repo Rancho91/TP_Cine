@@ -475,11 +475,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\ramir\\source\\repos\\CineApi\\DataCineDb\\DataCineDb.csproj",
+      "projectUniqueName": "C:\\Users\\ramir\\Desktop\\Proyectos Facu\\CineApi\\DataCineDb\\DataCineDb.csproj",
       "projectName": "DataCineDb",
-      "projectPath": "C:\\Users\\ramir\\source\\repos\\CineApi\\DataCineDb\\DataCineDb.csproj",
+      "projectPath": "C:\\Users\\ramir\\Desktop\\Proyectos Facu\\CineApi\\DataCineDb\\DataCineDb.csproj",
       "packagesPath": "C:\\Users\\ramir\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\ramir\\source\\repos\\CineApi\\DataCineDb\\obj\\",
+      "outputPath": "C:\\Users\\ramir\\Desktop\\Proyectos Facu\\CineApi\\DataCineDb\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\ramir\\AppData\\Roaming\\NuGet\\NuGet.Config",
