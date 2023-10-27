@@ -26,6 +26,16 @@ namespace DataCineDb.Entidades.Maestras
             Duracion = TimeSpan.FromHours(2) + TimeSpan.FromMinutes(30);
         }
 
+        public Peliculas(string nombre)
+        {
+            Codigo = 0;
+            Nombre =nombre;
+            Genero = new Generos();
+            Clasificacion = new Clasificaciones();
+            Pais = new Paises();
+
+            Duracion = TimeSpan.FromHours(0) + TimeSpan.FromMinutes(0);
+        }
         public Peliculas(int codigo, string nombre, Generos genero, Clasificaciones clasificacion, Paises pais, TimeSpan duracion)
         {
             Codigo = codigo;

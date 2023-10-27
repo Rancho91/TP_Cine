@@ -36,6 +36,31 @@ namespace DataCineDb.Entidades.Maestras
 
             Butacas = new List<Butacas>();
         }
+
+        public Funciones(int codigo, Peliculas pelicula, DateTime fecha, TimeSpan horario)
+        {
+            Codigo = codigo;
+            Pelicula = pelicula;
+            Fecha = fecha;
+            Horario = horario;
+            Idioma = new Idiomas();
+            Subtitulada = false;
+            TerceraDimencion = false;
+            Butacas = new List<Butacas>();
+        }
+
+        public Funciones(int codigo, Peliculas pelicula, DateTime fecha, TimeSpan horario, decimal precio, bool subtitulada, bool terceraDimencion, Idiomas idioma)
+        {
+            Codigo = codigo;
+            Pelicula = pelicula;
+            Fecha = fecha;
+            Horario = horario;
+            Idioma = idioma;
+            Precio = precio;
+            Subtitulada = subtitulada;
+            TerceraDimencion = terceraDimencion;
+
+        }
         public void agregarButaca(Butacas butaca)
         {
             Butacas.Add(butaca);
