@@ -112,7 +112,7 @@ namespace DataCineDb.Data
           
 
             cmd.ExecuteNonQuery();
-  int nroFactura = (int)parameter.Value;
+            int nroFactura = (int)parameter.Value;
             return nroFactura;
         }
 
