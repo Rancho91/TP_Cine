@@ -12,7 +12,7 @@ namespace DataCineDb.Entidades.Maestras
     {
 
         public int Codigo { get; set; }
-        public Pelicula Pelicula { get; set; }
+        public Peliculas Pelicula { get; set; }
         public Idiomas Idioma { get; set; }
         public TimeSpan Horario { get; set; }
         public DateTime Fecha { get; set; }
@@ -28,7 +28,7 @@ namespace DataCineDb.Entidades.Maestras
             Codigo = 0;
             Fecha= DateTime.Now;
             Idioma = new Idiomas();
-            Pelicula = new Pelicula();
+            Pelicula = new Peliculas();
             Horario = TimeSpan.FromHours(0) + TimeSpan.FromMinutes(0);
             Precio = 0;
             Subtitulada = false;

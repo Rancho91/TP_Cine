@@ -35,7 +35,7 @@ namespace CineApi.Controllers
                 return BadRequest("Se ha producido un error al obtener los géneros.");
             }
         }
-
+        /*
         // GET api/<ValuesController>/5
         [HttpGet("{id}")]
         public string Get(int id)
@@ -60,5 +60,6 @@ namespace CineApi.Controllers
         public void Delete(int id)
         {
         }
+        */
     }
 }

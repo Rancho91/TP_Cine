@@ -1,6 +1,5 @@
 ﻿using DataCineDb.Data;
 using DataCineDb.Entidades.Auxiliares;
-using DataCineDb.Service.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Data;

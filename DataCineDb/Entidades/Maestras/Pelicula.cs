@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DataCineDb.Entidades.Maestras
 {
-    public class Pelicula
+    public class Peliculas
     {
         public int Codigo { get; set; }
         public string Nombre { get; set; }
@@ -15,7 +15,7 @@ namespace DataCineDb.Entidades.Maestras
         public Paises Pais { get; set; }
 
         public TimeSpan Duracion { get; set; }
-        public Pelicula()
+        public Peliculas()
         {
             Codigo = 0;
             Nombre=string.Empty;
@@ -26,7 +26,7 @@ namespace DataCineDb.Entidades.Maestras
             Duracion = TimeSpan.FromHours(2) + TimeSpan.FromMinutes(30);
         }
 
-        public Pelicula(int codigo, string nombre, Generos genero, Clasificaciones clasificacion, Paises pais, TimeSpan duracion)
+        public Peliculas(int codigo, string nombre, Generos genero, Clasificaciones clasificacion, Paises pais, TimeSpan duracion)
         {
             Codigo = codigo;
             Nombre = nombre;

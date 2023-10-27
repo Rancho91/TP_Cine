@@ -39,8 +39,8 @@ namespace CineApi.Controllers
                 return BadRequest(ex.Message);
             }
         }
-
-        // PUT api/<ValuesController>/5
+    /*
+        //PUT api/<ValuesController>/5
         [HttpPut("{id}")]
         public void Put(int id, [FromBody] string value)
         {
@@ -51,5 +51,6 @@ namespace CineApi.Controllers
         public void Delete(int id)
         {
         }
+    */
     }
 }
