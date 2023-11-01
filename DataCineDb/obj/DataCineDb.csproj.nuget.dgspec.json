@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\ramir\\Desktop\\Proyectos Facu\\CineApi\\DataCineDb\\DataCineDb.csproj": {}
+    "D:\\Users\\Usuario\\Desktop\\TPI Progra II\\TP_Cine\\DataCineDb\\DataCineDb.csproj": {}
   },
   "projects": {
-    "C:\\Users\\ramir\\Desktop\\Proyectos Facu\\CineApi\\DataCineDb\\DataCineDb.csproj": {
+    "D:\\Users\\Usuario\\Desktop\\TPI Progra II\\TP_Cine\\DataCineDb\\DataCineDb.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\ramir\\Desktop\\Proyectos Facu\\CineApi\\DataCineDb\\DataCineDb.csproj",
+        "projectUniqueName": "D:\\Users\\Usuario\\Desktop\\TPI Progra II\\TP_Cine\\DataCineDb\\DataCineDb.csproj",
         "projectName": "DataCineDb",
-        "projectPath": "C:\\Users\\ramir\\Desktop\\Proyectos Facu\\CineApi\\DataCineDb\\DataCineDb.csproj",
-        "packagesPath": "C:\\Users\\ramir\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\ramir\\Desktop\\Proyectos Facu\\CineApi\\DataCineDb\\obj\\",
+        "projectPath": "D:\\Users\\Usuario\\Desktop\\TPI Progra II\\TP_Cine\\DataCineDb\\DataCineDb.csproj",
+        "packagesPath": "C:\\Users\\Usuario\\.nuget\\packages\\",
+        "outputPath": "D:\\Users\\Usuario\\Desktop\\TPI Progra II\\TP_Cine\\DataCineDb\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\ramir\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Usuario\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -51,8 +51,7 @@
             "net47",
             "net471",
             "net472",
-            "net48",
-            "net481"
+            "net48"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -61,7 +60,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.201\\RuntimeIdentifierGraph.json"
         }
       }
     }
