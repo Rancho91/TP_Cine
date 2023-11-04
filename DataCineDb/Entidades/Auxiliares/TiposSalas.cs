@@ -10,9 +10,11 @@ namespace DataCineDb.Entidades.Auxiliares
     {
         public int Codigo { get; set; }
         public string Tipo { get; set; }
+
         public TiposSalas()
         {
-
+            Codigo= 0;
+            Tipo = string.Empty;
         }
         public TiposSalas(string tipo)
         {

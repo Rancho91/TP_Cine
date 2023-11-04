@@ -16,7 +16,7 @@ namespace DataCineDb.Data
         private DbHelper()
         {
                 
-            conexion = new SqlConnection("Data Source=DESKTOP-1G25HFQ;Initial Catalog=COMPLEJO_CINE;Integrated Security=True");
+            conexion = new SqlConnection(@"Data Source=DESKTOP-1G25HFQ;Initial Catalog=COMPLEJO_CINE;Integrated Security=True");
 
            
         }
@@ -59,19 +59,25 @@ namespace DataCineDb.Data
 
         internal DataTable Consultar(string nombreSp, List<Parametros> lstParametros)
         {
-            Conectar();
-            SqlCommand cmd = new SqlCommand();
-            cmd.Connection = conexion;
-            cmd.CommandType = CommandType.StoredProcedure;
-            cmd.CommandText = nombreSp;
-            foreach (Parametros p in lstParametros)
+            try
             {
-                cmd.Parameters.AddWithValue(p.Nombre, p.Valor);
-            }
-            DataTable dt = new DataTable();
-            dt.Load(cmd.ExecuteReader());
-            Desconectar();
-            return dt;
+                Conectar();
+                SqlCommand cmd = new SqlCommand();
+                cmd.Connection = conexion;
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.CommandText = nombreSp;
+                foreach (Parametros p in lstParametros)
+                {
+                    cmd.Parameters.AddWithValue(p.Nombre, p.Valor);
+                }
+                DataTable dt = new DataTable();
+                dt.Load(cmd.ExecuteReader());
+                Desconectar();
+                return dt;
+            }finally {
+                Desconectar();
+                 }
+
 
         }
 

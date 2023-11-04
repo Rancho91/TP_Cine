@@ -16,6 +16,9 @@ namespace DataCineDb.Entidades.Maestras
 
         public Salas()
         {
+            Codigo = 0;
+            Numero = 0;
+            Tipo = new TiposSalas();
             Funciones = new List<Funciones>();
         }
 

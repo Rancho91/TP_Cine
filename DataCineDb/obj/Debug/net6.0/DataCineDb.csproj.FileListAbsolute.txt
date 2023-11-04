@@ -10,6 +10,9 @@ C:\Users\ramir\source\repos\CineApi\DataCineDb\obj\Debug\net6.0\DataCineDb.dll
 C:\Users\ramir\source\repos\CineApi\DataCineDb\obj\Debug\net6.0\refint\DataCineDb.dll
 C:\Users\ramir\source\repos\CineApi\DataCineDb\obj\Debug\net6.0\DataCineDb.pdb
 C:\Users\ramir\source\repos\CineApi\DataCineDb\obj\Debug\net6.0\ref\DataCineDb.dll
+C:\Users\ramir\Desktop\Proyectos Facu\CineApi\DataCineDb\bin\Debug\net6.0\DataCineDb.deps.json
+C:\Users\ramir\Desktop\Proyectos Facu\CineApi\DataCineDb\bin\Debug\net6.0\DataCineDb.dll
+C:\Users\ramir\Desktop\Proyectos Facu\CineApi\DataCineDb\bin\Debug\net6.0\DataCineDb.pdb
 C:\Users\ramir\Desktop\Proyectos Facu\CineApi\DataCineDb\obj\Debug\net6.0\DataCineDb.csproj.AssemblyReference.cache
 C:\Users\ramir\Desktop\Proyectos Facu\CineApi\DataCineDb\obj\Debug\net6.0\DataCineDb.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\ramir\Desktop\Proyectos Facu\CineApi\DataCineDb\obj\Debug\net6.0\DataCineDb.AssemblyInfoInputs.cache
@@ -18,7 +21,4 @@ C:\Users\ramir\Desktop\Proyectos Facu\CineApi\DataCineDb\obj\Debug\net6.0\DataCi
 C:\Users\ramir\Desktop\Proyectos Facu\CineApi\DataCineDb\obj\Debug\net6.0\DataCineDb.dll
 C:\Users\ramir\Desktop\Proyectos Facu\CineApi\DataCineDb\obj\Debug\net6.0\refint\DataCineDb.dll
 C:\Users\ramir\Desktop\Proyectos Facu\CineApi\DataCineDb\obj\Debug\net6.0\DataCineDb.pdb
-C:\Users\ramir\Desktop\Proyectos Facu\CineApi\DataCineDb\bin\Debug\net6.0\DataCineDb.deps.json
-C:\Users\ramir\Desktop\Proyectos Facu\CineApi\DataCineDb\bin\Debug\net6.0\DataCineDb.dll
-C:\Users\ramir\Desktop\Proyectos Facu\CineApi\DataCineDb\bin\Debug\net6.0\DataCineDb.pdb
 C:\Users\ramir\Desktop\Proyectos Facu\CineApi\DataCineDb\obj\Debug\net6.0\ref\DataCineDb.dll
