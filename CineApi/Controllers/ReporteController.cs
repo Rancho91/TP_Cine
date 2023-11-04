@@ -21,6 +21,9 @@ namespace CineApi.Controllers
         [HttpPut("peliculas")]
         public IActionResult Put(ReportePelicula consulta)
         {
+ // se necsita el Genero de la clase Genero y el numero de la clase Sala,
+ // pueden no enviarse, los acepta como nulos (trae sin filtros)
+ // si o si hay que enviar el orden
             try
             {
                 List<ReportePeliculasGanancia> list = service.GetReportePeliculasGanancias(consulta.Sala, consulta.Genero, consulta.orden);
