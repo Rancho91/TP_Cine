@@ -10,13 +10,13 @@ namespace DataCineDb.Data
     public class DbHelper
     {
         private SqlConnection conexion;
-        private string stringconexion = @"Data Source=DESKTOP-1G25HFQ;Initial Catalog=COMPLEJO_CINE;Integrated Security=True";
-        private static DbHelper instancia;
+        private string stringconexion = @"Data Source=DESKTOP-M7J5IEU\SQLEXPRESS;Initial Catalog=COMPLEJO_CINE;Integrated Security=True";
+        private static DbHelper ?instancia;
 
         private DbHelper()
         {
                 
-            conexion = new SqlConnection(@"Data Source=DESKTOP-1G25HFQ;Initial Catalog=COMPLEJO_CINE;Integrated Security=True");
+            conexion = new SqlConnection(@"Data Source=DESKTOP-M7J5IEU\SQLEXPRESS;Initial Catalog=COMPLEJO_CINE;Integrated Security=True");
 
            
         }
@@ -59,25 +59,19 @@ namespace DataCineDb.Data
 
         internal DataTable Consultar(string nombreSp, List<Parametros> lstParametros)
         {
-            try
+            Conectar();
+            SqlCommand cmd = new SqlCommand();
+            cmd.Connection = conexion;
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.CommandText = nombreSp;
+            foreach (Parametros p in lstParametros)
             {
-                Conectar();
-                SqlCommand cmd = new SqlCommand();
-                cmd.Connection = conexion;
-                cmd.CommandType = CommandType.StoredProcedure;
-                cmd.CommandText = nombreSp;
-                foreach (Parametros p in lstParametros)
-                {
-                    cmd.Parameters.AddWithValue(p.Nombre, p.Valor);
-                }
-                DataTable dt = new DataTable();
-                dt.Load(cmd.ExecuteReader());
-                Desconectar();
-                return dt;
-            }finally {
-                Desconectar();
-                 }
-
+                cmd.Parameters.AddWithValue(p.Nombre, p.Valor);
+            }
+            DataTable dt = new DataTable();
+            dt.Load(cmd.ExecuteReader());
+            Desconectar();
+            return dt;
 
         }
 
