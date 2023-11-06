@@ -5,6 +5,7 @@ using DataCineDb.Service;
 using DataCineDb.Entidades.Reportes;
 using DataCineDb.Entidades;
 using CineApi.interfaceReportes;
+using CineApi.BodyReportes;
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
 namespace CineApi.Controllers
@@ -40,6 +41,26 @@ namespace CineApi.Controllers
                 return BadRequest("Se ha producido un error");
             }
 
+        }
+        [HttpPut("butacas")]
+
+        public IActionResult Put(BodyReporteButaca consulta)
+        {
+            try
+            {
+                List<ReporteButacasDisponibles> list = service.getReporteButacasDisponibles(consulta.funcion, consulta.disponible, consulta.noDisponible);
+                if (list == null || list.Count == 0)
+                {
+                    return BadRequest("No se encontraron datos de géneros.");
+                }
+                return Ok(list);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Excepción: {ex.Message}");
+                Console.WriteLine($"Stack Trace: {ex.StackTrace}");
+                return BadRequest("Se ha producido un error");
+            }
         }
 
         // GET api/<ReporteController>/5

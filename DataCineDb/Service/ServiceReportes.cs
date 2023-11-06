@@ -39,5 +39,33 @@ namespace DataCineDb.Service
             }
             return list;
         }
+
+        public List<ReporteButacasDisponibles> getReporteButacasDisponibles(Funciones? funcion, int? disponibles, int? noDisponibles)
+        {
+            List<ReporteButacasDisponibles> list = new List<ReporteButacasDisponibles>();
+            List<Parametros> listParametros = new List<Parametros>() ;
+
+            if (funcion != null)
+                listParametros.Add(new Parametros("@Codigo_funcion", funcion.Codigo));
+            if (disponibles > -1)
+                listParametros.Add(new Parametros("@Disponible", disponibles));
+            if (noDisponibles > -1)
+                listParametros.Add(new Parametros("@noDisponible", noDisponibles));
+
+            DataTable dt = helper.Consultar("sp_butacas_disponibles_x_funcion", listParametros);
+            foreach(DataRow row in dt.Rows)
+            {
+                ReporteButacasDisponibles reporte = new ReporteButacasDisponibles();
+                reporte.Estado = row[5].ToString();
+                reporte.Numero = (int)row[4];
+                reporte.Fila = row[3].ToString();
+                reporte.Codigo = (int)row[0];
+                list.Add(reporte);
+                 
+            }
+
+
+            return list;
+        }
     }
 }
