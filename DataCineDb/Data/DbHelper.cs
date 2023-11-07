@@ -75,7 +75,6 @@ namespace DataCineDb.Data
 
         public void Insertar(string sp, List<Parametros> param, SqlTransaction t)
         {
-  
             SqlCommand cmd = new SqlCommand(sp, conexion, t);
             cmd.CommandType = CommandType.StoredProcedure;
             foreach (Parametros p in param)
@@ -83,10 +82,13 @@ namespace DataCineDb.Data
                 cmd.Parameters.AddWithValue(p.Nombre, p.Valor);
             }
             cmd.ExecuteNonQuery();
+            
         }
         public void Insertar(string sp, List<Parametros> param )
         {
-        
+            try
+            {
+        Conectar();
             SqlCommand cmd = new SqlCommand(sp, conexion);
             cmd.CommandType = CommandType.StoredProcedure;
             foreach (Parametros p in param)
@@ -94,6 +96,13 @@ namespace DataCineDb.Data
                 cmd.Parameters.AddWithValue(p.Nombre, p.Valor);
             }
             cmd.ExecuteNonQuery();
+            Desconectar();
+            }
+            finally
+            {
+                Desconectar();
+            }
+    
         }
         public int InsertarNumeroFactura(string sp, string param, SqlTransaction t, List<Parametros> parametros)
         {

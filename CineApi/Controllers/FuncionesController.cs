@@ -62,11 +62,28 @@ namespace CineApi.Controllers
             }
         }
 
-        // POST api/<ValuesController>
-        //[HttpPost]
-        //public void Post([FromBody] string value)
-        //{
-        //}
+        //POST api/<ValuesController>
+           
+        [HttpPost]
+        public IActionResult Post([FromBody] Salas sala)
+        {
+            try
+            {
+                Console.WriteLine(sala);
+                service.postFunciones(sala);
+                return Ok( sala);
+            }
+            catch (Exception ex)
+            {
+                // Registra la excepción para ver más detalles en el registro o en la salida de la consola
+                Console.WriteLine($"Excepción: {ex.Message}");
+                // También puedes registrar detalles adicionales, como ex.StackTrace, para obtener más información sobre la excepción
+                Console.WriteLine($"Stack Trace: {ex.StackTrace}");
+
+                // Puedes devolver un mensaje de error genérico o personalizado en la respuesta
+                return BadRequest("Se ha producido un error al obtener los géneros.");
+            }
+        }
 
         //// PUT api/<ValuesController>/5
         //[HttpPut("{id}")]

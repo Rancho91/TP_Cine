@@ -15,7 +15,7 @@ namespace DataCineDb.Entidades.Maestras
         public bool Vendida { get; set;}
         public bool Reservada { get; set; }
 
-                public Butacas()
+        public Butacas()
         {
             Codigo = 0;
             Numero=0;

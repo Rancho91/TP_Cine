@@ -15,12 +15,12 @@ namespace DataCineDb.Service
     {
         DbHelper helper = DbHelper.ObtenerInstancia();
 
-        public List<ReportePeliculasGanancia> GetReportePeliculasGanancias(int sala, string genero, int? order)
+        public List<ReportePeliculasGanancia> GetReportePeliculasGanancias(int sala, string? genero, int? order)
 
         {
             List<ReportePeliculasGanancia> list = new List<ReportePeliculasGanancia>();
             List<Parametros> listParam = new List<Parametros>();
-            if (genero != string.Empty && genero != "")
+            if (genero != null && genero.ToLower() != "todo")
                 listParam.Add(new Parametros("@genero", genero));
             if (sala != 0)
                 listParam.Add(new Parametros("@sala", sala.ToString()));

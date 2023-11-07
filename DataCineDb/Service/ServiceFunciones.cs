@@ -64,5 +64,28 @@ namespace DataCineDb.Service
             }
             return funcion;
         }
+
+        public void postFunciones(Salas sala)
+        {
+            
+                foreach (Funciones funcion in sala.Funciones)
+                {
+                    List<Parametros> listParametros = new List<Parametros>();
+                    listParametros.Add(new Parametros("@Cod_pelicula", funcion.Pelicula.Codigo));
+                    listParametros.Add(new Parametros("@Cod_sala", sala.Codigo));
+                    listParametros.Add(new Parametros("@Horario", funcion.Horario));
+                    listParametros.Add(new Parametros("@terceraDimencion", funcion.TerceraDimencion));
+                    listParametros.Add(new Parametros("@subtitulos", funcion.Subtitulada));
+                listParametros.Add(new Parametros("@fecha", funcion.Fecha));
+                    listParametros.Add(new Parametros("@Precio", funcion.Precio));
+                    listParametros.Add(new Parametros("@Cod_idioma", funcion.Idioma.Codigo));
+                    helper.Insertar("SP_FUNCIONES_INSERT", listParametros);
+                }
+             
+          
+            
+
+
+        }
     }
 }
