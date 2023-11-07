@@ -18,16 +18,17 @@ namespace CineApi.Controllers
 
         // GET: api/<ReporteController>
         ServiceReportes service = new ServiceReportes();
-
-        [HttpPut("peliculas")]
-        public IActionResult Put(ReportePelicula consulta)
+        
+        [HttpGet("peliculas/{sala}/{genero}/{orden}")]
+        public IActionResult Get(int sala,string genero, int orden)
         {
  // se necsita el Genero de la clase Genero y el numero de la clase Sala,
  // pueden no enviarse, los acepta como nulos (trae sin filtros)
  // si o si hay que enviar el orden
             try
             {
-                List<ReportePeliculasGanancia> list = service.GetReportePeliculasGanancias(consulta.Sala, consulta.Genero, consulta.orden);
+
+                List<ReportePeliculasGanancia> list = service.GetReportePeliculasGanancias(sala, genero, orden);
                 if (list == null || list.Count == 0)
                 {
                     return BadRequest("No se encontraron datos de géneros.");
@@ -42,13 +43,13 @@ namespace CineApi.Controllers
             }
 
         }
-        [HttpPut("butacas")]
+        [HttpGet("butacas/{funcion}/{disponibles}/{noDisponibles}")]
 
-        public IActionResult Put(BodyReporteButaca consulta)
+        public IActionResult Put(int funcion, int disponibles, int noDisponibles)
         {
             try
             {
-                List<ReporteButacasDisponibles> list = service.getReporteButacasDisponibles(consulta.funcion, consulta.disponible, consulta.noDisponible);
+                List<ReporteButacasDisponibles> list = service.getReporteButacasDisponibles(funcion, disponibles, noDisponibles);
                 if (list == null || list.Count == 0)
                 {
                     return BadRequest("No se encontraron datos de géneros.");
@@ -63,29 +64,30 @@ namespace CineApi.Controllers
             }
         }
 
-        // GET api/<ReporteController>/5
-        [HttpGet("{id}")]
-        public string Get(int id)
-        {
-            return "value";
-        }
+        //// GET api/<ReporteController>/5
+        //[HttpGet("{id}")]
+        //public string Get(int id)
+        //{
+        //    return "value";
+        //}
 
-        // POST api/<ReporteController>
-        [HttpPost]
-        public void Post([FromBody] string value)
-        {
-        }
+        //// POST api/<ReporteController>
+        //[HttpPost]
+        //public void Post([FromBody] string value)
+        //{
 
-        // PUT api/<ReporteController>/5
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
-        {
-        }
+        //}
 
-        // DELETE api/<ReporteController>/5
-        [HttpDelete("{id}")]
-        public void Delete(int id)
-        {
-        }
+        //// PUT api/<ReporteController>/5
+        //[HttpPut("{id}")]
+        //public void Put(int id, [FromBody] string value)
+        //{
+        //}
+
+        //// DELETE api/<ReporteController>/5
+        //[HttpDelete("{id}")]
+        //public void Delete(int id)
+        //{
+        //}
     }
 }

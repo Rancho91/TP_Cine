@@ -15,15 +15,15 @@ namespace DataCineDb.Service
     {
         DbHelper helper = DbHelper.ObtenerInstancia();
 
-        public List<ReportePeliculasGanancia> GetReportePeliculasGanancias(Salas? sala, Generos? genero, int? order)
+        public List<ReportePeliculasGanancia> GetReportePeliculasGanancias(int sala, string genero, int? order)
 
         {
             List<ReportePeliculasGanancia> list = new List<ReportePeliculasGanancia>();
             List<Parametros> listParam = new List<Parametros>();
-            if (genero.Genero != string.Empty && genero.Genero != "")
-                listParam.Add(new Parametros("@genero", genero.Genero));
-            if (sala.Numero != 0)
-                listParam.Add(new Parametros("@sala", sala.Numero.ToString()));
+            if (genero != string.Empty && genero != "")
+                listParam.Add(new Parametros("@genero", genero));
+            if (sala != 0)
+                listParam.Add(new Parametros("@sala", sala.ToString()));
             if (order ==0 || order==1)
                 listParam.Add(new Parametros("@order", order));
 
@@ -40,13 +40,13 @@ namespace DataCineDb.Service
             return list;
         }
 
-        public List<ReporteButacasDisponibles> getReporteButacasDisponibles(Funciones? funcion, int? disponibles, int? noDisponibles)
+        public List<ReporteButacasDisponibles> getReporteButacasDisponibles(int funcion, int? disponibles, int? noDisponibles)
         {
             List<ReporteButacasDisponibles> list = new List<ReporteButacasDisponibles>();
             List<Parametros> listParametros = new List<Parametros>() ;
 
             if (funcion != null)
-                listParametros.Add(new Parametros("@Codigo_funcion", funcion.Codigo));
+                listParametros.Add(new Parametros("@Codigo_funcion", funcion));
             if (disponibles > -1)
                 listParametros.Add(new Parametros("@Disponible", disponibles));
             if (noDisponibles > -1)
