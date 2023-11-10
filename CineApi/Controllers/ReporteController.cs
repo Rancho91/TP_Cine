@@ -4,8 +4,6 @@ using DataCineDb.Entidades.Maestras;
 using DataCineDb.Service;
 using DataCineDb.Entidades.Reportes;
 using DataCineDb.Entidades;
-using CineApi.interfaceReportes;
-using CineApi.BodyReportes;
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
 namespace CineApi.Controllers
@@ -43,13 +41,13 @@ namespace CineApi.Controllers
             }
 
         }
-        [HttpGet("butacas/{funcion}/{disponibles}/{noDisponibles}")]
+        [HttpGet("butacas/{funcion}/{estado}")]
 
-        public IActionResult Put(int funcion, int disponibles, int noDisponibles)
+        public IActionResult Put(int funcion, string? estado)
         {
             try
             {
-                List<ReporteButacasDisponibles> list = service.getReporteButacasDisponibles(funcion, disponibles, noDisponibles);
+                List<ReporteButacasDisponibles> list = service.getReporteButacasDisponibles(funcion, estado);
                 if (list == null || list.Count == 0)
                 {
                     return BadRequest("No se encontraron datos de géneros.");

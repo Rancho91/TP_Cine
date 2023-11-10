@@ -40,25 +40,24 @@ namespace DataCineDb.Service
             return list;
         }
 
-        public List<ReporteButacasDisponibles> getReporteButacasDisponibles(int funcion, int? disponibles, int? noDisponibles)
+        public List<ReporteButacasDisponibles> getReporteButacasDisponibles(int funcion, string? estado)
         {
             List<ReporteButacasDisponibles> list = new List<ReporteButacasDisponibles>();
             List<Parametros> listParametros = new List<Parametros>() ;
 
-            if (funcion != null)
+            if (funcion != 0)
                 listParametros.Add(new Parametros("@Codigo_funcion", funcion));
-            if (disponibles > -1)
-                listParametros.Add(new Parametros("@Disponible", disponibles));
-            if (noDisponibles > -1)
-                listParametros.Add(new Parametros("@noDisponible", noDisponibles));
+            
+           listParametros.Add(new Parametros("@Estado", estado));
+       
 
             DataTable dt = helper.Consultar("sp_butacas_disponibles_x_funcion", listParametros);
             foreach(DataRow row in dt.Rows)
             {
                 ReporteButacasDisponibles reporte = new ReporteButacasDisponibles();
-                reporte.Estado = row[5].ToString();
-                reporte.Numero = (int)row[4];
-                reporte.Fila = row[3].ToString();
+                reporte.Estado = row[4].ToString();
+                reporte.Numero = (int)row[3];
+                reporte.Fila = row[2].ToString();
                 reporte.Codigo = (int)row[0];
                 list.Add(reporte);
                  
