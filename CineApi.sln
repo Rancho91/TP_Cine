@@ -7,7 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CineApi", "CineApi\CineApi.
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataCineDb", "DataCineDb\DataCineDb.csproj", "{81607D1D-45E0-46CD-B6B6-0126900E1C05}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReportesCine", "..\..\Cine\CineApi\TP_Cine\ReportesCine\ReportesCine.csproj", "{A162E58B-C80A-4D95-B626-E25EF3E256B3}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReportesCine", "ReportesCine\ReportesCine.csproj", "{A162E58B-C80A-4D95-B626-E25EF3E256B3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
