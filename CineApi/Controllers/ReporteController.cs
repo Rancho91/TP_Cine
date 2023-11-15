@@ -83,6 +83,28 @@ namespace CineApi.Controllers
             }
         }
 
+
+        [HttpGet("peliculasGeneroClasi/{genero}/{duracion}/{clasificacion}")]
+
+        public IActionResult Get(string? genero, TimeSpan duracion, string clasificacion)
+        {
+            try
+            {
+                List<ReportePeliculasGanancia> list = service.ReporteTodasLasPeliculas(genero, clasificacion, duracion);
+                if (list == null || list.Count == 0)
+                {
+                    return BadRequest("No se encontraron datos del reporte.");
+                }
+                return Ok(list);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Excepción: {ex.Message}");
+                Console.WriteLine($"Stack Trace: {ex.StackTrace}");
+                return BadRequest("Se ha producido un error");
+            }
+        }
+
         //// GET api/<ReporteController>/5
         //[HttpGet("{id}")]
         //public string Get(int id)

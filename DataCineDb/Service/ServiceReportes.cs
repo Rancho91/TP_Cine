@@ -105,6 +105,50 @@ namespace DataCineDb.Service
 
         }
 
+        public List<ReportePeliculasGanancia> ReporteTodasLasPeliculas(string? genero, string? clasificacion, TimeSpan? duracion)
+        {
+            List<ReportePeliculasGanancia> list = new List<ReportePeliculasGanancia>();
+            List<Parametros> listParametros = new List<Parametros>();
+            if (genero != null)
+            {
+                listParametros.Add(new Parametros("@genero", genero));
+            }
+            if(clasificacion!=null){
+                listParametros.Add(new Parametros("@clasificacion", clasificacion));
+
+            }
+            if(duracion != null)
+            {
+                listParametros.Add(new Parametros("@duracion", duracion));
+
+            }
+            DataTable dt = helper.Consultar("SP_PELICUAS_X_GENERO", listParametros);
+            foreach(DataRow row in dt.Rows)
+            {
+                ReportePeliculasGanancia rp = new ReportePeliculasGanancia();
+                rp.Genero.Genero = row[0].ToString();
+                rp.Nombre = row[1].ToString();
+                if (row[2] != DBNull.Value)
+                {
+                    rp.Duracion = TimeSpan.Parse(row[2].ToString());
+                }
+                else
+                {
+                    rp.Duracion = TimeSpan.Zero;
+                }
+                rp.Pais.Pais = row[3].ToString();
+                rp.Clasificacion.Clasificacion = row[4].ToString();
+             
+                object valorGanancia = (decimal)row[6];
+                rp.Ganancia = (valorGanancia != DBNull.Value) ? Convert.ToDecimal(valorGanancia) : 0;
+
+
+                list.Add(rp);
+            }
+            return list;
+
+
+        }
 
     }
 }

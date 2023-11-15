@@ -220,6 +220,7 @@
     <Compile Include="Entidades\Maestras\Salas.cs" />
     <Compile Include="Entidades\Reportes\ReporteButacasDisponibles.cs" />
     <Compile Include="Entidades\Reportes\ReportePeliculasGanancia.cs" />
+    <Compile Include="Entidades\Reportes\reportePeliculasXFecha.cs" />
     <Compile Include="FormReporte.cs">
       <SubType>Form</SubType>
     </Compile>
