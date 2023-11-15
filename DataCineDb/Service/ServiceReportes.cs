@@ -15,7 +15,7 @@ namespace DataCineDb.Service
     {
         DbHelper helper = DbHelper.ObtenerInstancia();
 
-        public List<ReportePeliculasGanancia> GetReportePeliculasGanancias(int sala, string? genero, int? order)
+        public List<ReportePeliculasGanancia> GetReportePeliculasGanancias(int? sala, string? genero, int? order)
 
         {
             List<ReportePeliculasGanancia> list = new List<ReportePeliculasGanancia>();
@@ -66,5 +66,45 @@ namespace DataCineDb.Service
 
             return list;
         }
+
+        public List<ReportePeliculasXFecha> reportePeliculasFechaHora(DateTime? fechaInicio, DateTime? fechaFinal, TimeSpan? horario)
+        {
+            List<ReportePeliculasXFecha> list = new List<ReportePeliculasXFecha>();
+            List<Parametros> listParametros = new List<Parametros>();
+
+            if (fechaInicio != null)
+            {
+                listParametros.Add(new Parametros("@fechainicio", fechaInicio));
+            }
+            if(fechaFinal != null)
+            {
+                listParametros.Add(new Parametros("@fechaFinal", fechaFinal));
+            }
+            if(horario != null)
+            {
+                listParametros.Add(new Parametros("@hora", horario));
+            }
+
+            DataTable dt = helper.Consultar("sp_pelicuas_x_fecha_hora", listParametros);
+            foreach(DataRow row in dt.Rows)
+            {
+                ReportePeliculasXFecha fun = new ReportePeliculasXFecha();
+                fun.Codigo = (int)row[0];
+                fun.Pelicula.Nombre = row[1].ToString();
+                fun.Sala.Codigo= (int)row[2];
+                fun.Fecha = DateTime.Parse(row[3].ToString());
+                fun.Pelicula.Clasificacion.Clasificacion = row[4].ToString();
+                fun.Pelicula.Duracion = TimeSpan.Parse(row[5].ToString());
+                fun.Horario = TimeSpan.Parse(row[6].ToString());
+                fun.Idioma.Idioma = row[7].ToString();
+                fun.Subtitulada = row[8].ToString() == "subtitulada";
+                list.Add(fun);
+                
+            }
+            return list;
+
+        }
+
+
     }
 }
