@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "LPtXu/3s/x8LCP3E7XMwGiCvxz6AaeMStsl/0aQWdSDuVYgmIfBByOSENJJLhKE2lqjfNWn8Xb9mZMqoJo45jw==",
+  "dgSpecHash": "GwZcA7+j5mYMBpzVLfFk949yMWKCJpODfPVhEYEi/mbt9ryL5cC1NtjW+Ayc48ETA5nNh+yiA5IwH09SUw7ptg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\ramir\\Desktop\\Proyectos Facu\\version ema\\TP_Cine\\CineApi\\CineApi.csproj",
+  "projectFilePath": "C:\\Users\\ramir\\Desktop\\Proyectos Facu\\api\\TP_Cine\\CineApi\\CineApi.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\ramir\\.nuget\\packages\\microsoft.aspnet.webapi.client\\6.0.0\\microsoft.aspnet.webapi.client.6.0.0.nupkg.sha512",
     "C:\\Users\\ramir\\.nuget\\packages\\microsoft.extensions.apidescription.server\\6.0.5\\microsoft.extensions.apidescription.server.6.0.5.nupkg.sha512",
