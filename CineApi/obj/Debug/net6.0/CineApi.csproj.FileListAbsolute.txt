@@ -191,3 +191,6 @@ C:\Users\Emanuel\Desktop\Cine-App\TP_Cine\CineApi\obj\Debug\net6.0\ref\CineApi.d
 C:\Users\Emanuel\Desktop\Cine-App\TP_Cine\CineApi\bin\Debug\net6.0\System.Net.Http.Formatting.dll
 C:\Users\Emanuel\Desktop\Cine-App\TP_Cine\CineApi\bin\Debug\net6.0\Newtonsoft.Json.dll
 C:\Users\Emanuel\Desktop\Cine-App\TP_Cine\CineApi\bin\Debug\net6.0\Newtonsoft.Json.Bson.dll
+C:\Users\ramir\Desktop\Proyectos Facu\CineApi\TP_Cine\CineApi\bin\Debug\net6.0\System.Net.Http.Formatting.dll
+C:\Users\ramir\Desktop\Proyectos Facu\CineApi\TP_Cine\CineApi\bin\Debug\net6.0\Newtonsoft.Json.dll
+C:\Users\ramir\Desktop\Proyectos Facu\CineApi\TP_Cine\CineApi\bin\Debug\net6.0\Newtonsoft.Json.Bson.dll
