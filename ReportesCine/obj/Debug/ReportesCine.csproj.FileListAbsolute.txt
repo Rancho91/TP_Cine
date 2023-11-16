@@ -654,3 +654,10 @@ C:\Users\ramir\Desktop\Proyectos Facu\version ema\TP_Cine\ReportesCine\obj\Debug
 C:\Users\ramir\Desktop\Proyectos Facu\version ema\TP_Cine\ReportesCine\obj\Debug\ReportesCine.csproj.CopyComplete
 C:\Users\ramir\Desktop\Proyectos Facu\version ema\TP_Cine\ReportesCine\obj\Debug\ReportesCine.exe
 C:\Users\ramir\Desktop\Proyectos Facu\version ema\TP_Cine\ReportesCine\obj\Debug\ReportesCine.pdb
+C:\Users\ramir\Desktop\Proyectos Facu\api\TP_Cine\ReportesCine\obj\Debug\ReportesCine.csproj.AssemblyReference.cache
+C:\Users\ramir\Desktop\Proyectos Facu\api\TP_Cine\ReportesCine\obj\Debug\CineApi.ReportesCine.Form1.resources
+C:\Users\ramir\Desktop\Proyectos Facu\api\TP_Cine\ReportesCine\obj\Debug\ReportesCine.Properties.Resources.resources
+C:\Users\ramir\Desktop\Proyectos Facu\api\TP_Cine\ReportesCine\obj\Debug\ReportesCine.csproj.GenerateResource.cache
+C:\Users\ramir\Desktop\Proyectos Facu\api\TP_Cine\ReportesCine\obj\Debug\ReportesCine.csproj.CoreCompileInputs.cache
+C:\Users\ramir\Desktop\Proyectos Facu\api\TP_Cine\ReportesCine\obj\Debug\ReportesCine.exe
+C:\Users\ramir\Desktop\Proyectos Facu\api\TP_Cine\ReportesCine\obj\Debug\ReportesCine.pdb
