@@ -115,7 +115,6 @@ namespace DataCineDb.Service
             }
             if(clasificacion!=null){
                 listParametros.Add(new Parametros("@clasificacion", clasificacion));
-
             }
             if(duracion != null)
             {
@@ -139,16 +138,49 @@ namespace DataCineDb.Service
                 rp.Pais.Pais = row[3].ToString();
                 rp.Clasificacion.Clasificacion = row[4].ToString();
              
-                object valorGanancia = (decimal)row[6];
+                object valorGanancia = row[6];
                 rp.Ganancia = (valorGanancia != DBNull.Value) ? Convert.ToDecimal(valorGanancia) : 0;
-
 
                 list.Add(rp);
             }
-            return list;
 
+            return list;
 
         }
 
+        public List<ReporteFacturasFormaPago> ReporteFacturaFormaPago(DateTime? fechainicio, DateTime? fechafinal, int? descuento)
+        {
+            List<ReporteFacturasFormaPago> list = new List<ReporteFacturasFormaPago>();
+            List<Parametros> listParametros = new List<Parametros>();
+            if (fechainicio != null)
+            {
+                listParametros.Add(new Parametros("@FECHAINICIO", fechainicio));
+            }
+            if (fechafinal != null)
+            {
+                listParametros.Add(new Parametros("@FECHAFINAL", fechafinal));
+            }
+            if (descuento != null)
+            {
+                listParametros.Add(new Parametros("@DESCUENTO", descuento));
+
+            }
+            DataTable dt = helper.Consultar("SP_CANTIDAD_VENTAS_X_FORMA_PAGO_FECHA", listParametros);
+            foreach (DataRow row in dt.Rows)
+            {
+                ReporteFacturasFormaPago rp = new ReporteFacturasFormaPago();
+                rp.CantVentas = (int)row[0];
+                rp.SumaTotal = (decimal)row[1];
+                rp.totalDescuento = (int)row[2];
+                rp.totalFacturado = (decimal)row[2];
+                rp.cantidadFunciones = (int)row[3];
+                rp.PromedioGananciaFuncion = (decimal)row[4];
+                rp.FormaPago = row[5].ToString();
+                list.Add(rp);
+            }
+
+            return list;
+
+        }
     }
 }

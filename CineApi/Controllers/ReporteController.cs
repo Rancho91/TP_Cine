@@ -105,6 +105,27 @@ namespace CineApi.Controllers
             }
         }
 
+        [HttpGet("facturaFormaPago/{fechaInicio}/{fechaFinal}/{descuento}")]
+
+        public IActionResult Get(DateTime? fechaInicio, DateTime? fechaFinal, int? descuento)
+        {
+            try
+            {
+                List<ReporteFacturasFormaPago> list = service.ReporteFacturaFormaPago(fechaInicio, fechaFinal, descuento);
+                if (list == null || list.Count == 0)
+                {
+                    return BadRequest("No se encontraron datos del reporte.");
+                }
+                return Ok(list);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Excepción: {ex.Message}");
+                Console.WriteLine($"Stack Trace: {ex.StackTrace}");
+                return BadRequest("Se ha producido un error");
+            }
+        }
+
         //// GET api/<ReporteController>/5
         //[HttpGet("{id}")]
         //public string Get(int id)

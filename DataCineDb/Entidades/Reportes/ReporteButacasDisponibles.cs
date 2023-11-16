@@ -16,5 +16,6 @@ namespace DataCineDb.Entidades.Reportes
         {
             Estado = string.Empty;
         }
+
     }
 }
