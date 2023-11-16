@@ -231,6 +231,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="service\DataHttp.cs" />
     <Compile Include="service\FuncionService.cs" />
+    <Compile Include="service\ReportePeliculaGananciaService.cs" />
     <Compile Include="SqlServerTypes\Loader.cs" />
     <EmbeddedResource Include="FormReporte.resx">
       <DependentUpon>FormReporte.cs</DependentUpon>

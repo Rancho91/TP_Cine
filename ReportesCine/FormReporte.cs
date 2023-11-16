@@ -1,4 +1,5 @@
 ﻿using ReportesCine.Entidades.Maestras;
+using ReportesCine.Entidades.Reportes;
 using ReportesCine.service;
 using System;
 using System.Collections.Generic;
@@ -15,7 +16,7 @@ namespace CineApi.ReportesCine
 {
     public partial class Form1 : Form
     {
-        private FuncionService funcionService;
+        private ReportePeliculaGananciaService funcionService;
         public Form1()
         {
             InitializeComponent();
@@ -26,7 +27,7 @@ namespace CineApi.ReportesCine
         {
 
             this.reportViewer1.RefreshReport();
-            funcionService = new FuncionService();
+            funcionService = new ReportePeliculaGananciaService("Ñ",TimeSpan.Parse("00:00:00"),"Ñ");
             llenarComboFunciones();
         }
 
@@ -46,7 +47,7 @@ namespace CineApi.ReportesCine
 
         private async void llenarComboFunciones()
         {
-            List<Funciones> lst = await funcionService.Get();
+            List<ReportePeliculasGanancia> lst = await funcionService.GetReport();
 
             cboFuncionReporte.DataSource = lst;
 

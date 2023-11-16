@@ -22,7 +22,7 @@ namespace DataCineDb.Service
             List<Parametros> listParam = new List<Parametros>();
             if (genero != null && genero.ToLower() != "todo")
                 listParam.Add(new Parametros("@genero", genero));
-            if (sala != 0)
+            if (sala != -1)                                    
                 listParam.Add(new Parametros("@sala", sala.ToString()));
             if (order ==0 || order==1)
                 listParam.Add(new Parametros("@order", order));
@@ -36,6 +36,7 @@ namespace DataCineDb.Service
                 reporte.Genero = new Generos(row[3].ToString());
                 reporte.Nombre = row[0].ToString();
                 list.Add(reporte);
+
             }
             return list;
         }
@@ -45,7 +46,7 @@ namespace DataCineDb.Service
             List<ReporteButacasDisponibles> list = new List<ReporteButacasDisponibles>();
             List<Parametros> listParametros = new List<Parametros>() ;
 
-            if (funcion != 0)
+            if (funcion != -1)
                 listParametros.Add(new Parametros("@Codigo_funcion", funcion));
             
            listParametros.Add(new Parametros("@Estado", estado));
@@ -109,11 +110,11 @@ namespace DataCineDb.Service
         {
             List<ReportePeliculasGanancia> list = new List<ReportePeliculasGanancia>();
             List<Parametros> listParametros = new List<Parametros>();
-            if (genero != null)
+            if (genero != "Ñ")
             {
                 listParametros.Add(new Parametros("@genero", genero));
             }
-            if(clasificacion!=null){
+            if(clasificacion!= "Ñ"){
                 listParametros.Add(new Parametros("@clasificacion", clasificacion));
             }
             if(duracion != null)
@@ -160,7 +161,7 @@ namespace DataCineDb.Service
             {
                 listParametros.Add(new Parametros("@FECHAFINAL", fechafinal));
             }
-            if (descuento != null)
+            if (descuento != -1)
             {
                 listParametros.Add(new Parametros("@DESCUENTO", descuento));
 
