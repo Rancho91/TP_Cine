@@ -56,14 +56,13 @@ namespace DataCineDb.Service
             foreach(DataRow row in dt.Rows)
             {
                 ReporteButacasDisponibles reporte = new ReporteButacasDisponibles();
-                reporte.Estado = row[4].ToString();
-                reporte.Numero = (int)row[3];
-                reporte.Fila = row[2].ToString();
+                reporte.Estado = row[3].ToString();
+                reporte.Numero = (int)row[2];
+                reporte.Fila = row[1].ToString();
                 reporte.Codigo = (int)row[0];
                 list.Add(reporte);
                  
             }
-
 
             return list;
         }

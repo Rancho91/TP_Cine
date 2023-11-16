@@ -11,22 +11,62 @@ using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using ReportesCine;
+using Microsoft.Reporting.WinForms;
+using ReportesCine.Entidades.Reportes;
 
 namespace CineApi.ReportesCine
 {
     public partial class Form1 : Form
     {
+<<<<<<< HEAD
         private ReportePeliculaGananciaService funcionService;
+=======
+        private FuncionService funcionService;
+
+        private ReporteButacasDisponiblesService reporteDBService;
+
+>>>>>>> 058d5b1922e681b97967809802d2dd0bd3cb3d5c
         public Form1()
         {
             InitializeComponent();
+            reporteDBService = new ReporteButacasDisponiblesService(1, "Disponible");
 
         }
 
-        private void Form1_Load(object sender, EventArgs e)
+        private async void Form1_Load(object sender, EventArgs e)
         {
+            try
+            {
+                List<ReporteButacasDisponibles> lst = await reporteDBService.GetReporte();
 
+                reportViewer1.LocalReport.ReportPath = @"C:\Users\Emanuel\Desktop\Cine-App\TP_Cine\ReportesCine\Reportes\Report1.rdlc";
+                reportViewer1.LocalReport.DataSources.Add(new ReportDataSource("ButacasDisponiblesDataSet", lst));
+
+
+                ReportParameter[] param = new ReportParameter[lst.Count];
+
+                    param[0] = new ReportParameter("Butaca", 1.ToString());
+                    param[1] = new ReportParameter("Fila", "M");
+                    param[2] = new ReportParameter("Numero", 1.ToString());
+                    param[3] = new ReportParameter("Estado", "D");
+
+                    reportViewer1.LocalReport.SetParameters(param[0]);
+                    reportViewer1.LocalReport.SetParameters(param[1]);
+                    reportViewer1.LocalReport.SetParameters(param[2]);
+                    reportViewer1.LocalReport.SetParameters(param[3]);
+
+                funcionService = new FuncionService();
+                llenarComboFunciones();
+                this.reportViewer1.RefreshReport();
+            }
+            catch (Exception ex)
+            {
+                // Manejar la excepción, por ejemplo, mostrar un mensaje de error o registrarla.
+                MessageBox.Show($"Error al obtener datos: {ex.Message}");
+            }
             this.reportViewer1.RefreshReport();
+<<<<<<< HEAD
             funcionService = new ReportePeliculaGananciaService("Ñ",TimeSpan.Parse("00:00:00"),"Ñ");
             llenarComboFunciones();
         }
@@ -43,6 +83,8 @@ namespace CineApi.ReportesCine
         private void reportViewer1_Load(object sender, EventArgs e)
         {
 
+=======
+>>>>>>> 058d5b1922e681b97967809802d2dd0bd3cb3d5c
         }
 
         private async void llenarComboFunciones()
@@ -54,11 +96,8 @@ namespace CineApi.ReportesCine
             cboFuncionReporte.DisplayMember = "codigo"; 
 
             cboFuncionReporte.ValueMember = "codigo";
-        }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            llenarComboFunciones();
+            cboFuncionReporte.DropDownStyle = ComboBoxStyle.DropDownList;
         }
     }
 }

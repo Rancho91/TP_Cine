@@ -41,6 +41,7 @@ namespace CineApi.Controllers
             }
 
         }
+
         [HttpGet("butacas/{funcion}/{estado}")]
 
         public IActionResult Get(int funcion, string? estado)

@@ -10,12 +10,12 @@ namespace DataCineDb.Data
     public class DbHelper
     {
         private SqlConnection conexion;
-        private string stringconexion = @"Data Source=DESKTOP-1G25HFQ;Initial Catalog=COMPLEJO_CINE;Integrated Security=True";
+        private string stringconexion = @"Data Source=.\SQLEXPRESS;Initial Catalog=COMPLEJO_CINE;Integrated Security=True";
         private static DbHelper ?instancia;
 
         private DbHelper()
         {
-            conexion = new SqlConnection(@"Data Source=DESKTOP-1G25HFQ;Initial Catalog=COMPLEJO_CINE;Integrated Security=True");
+            conexion = new SqlConnection(@"Data Source=.\SQLEXPRESS;Initial Catalog=COMPLEJO_CINE;Integrated Security=True");
 
         }
 
