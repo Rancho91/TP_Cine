@@ -63,7 +63,6 @@ namespace DataCineDb.Service
                  
             }
 
-
             return list;
         }
     }

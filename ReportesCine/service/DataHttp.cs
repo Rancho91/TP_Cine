@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Net.Http;
-using System.Threading.Tasks;
+using System.Collections.Generic;
+using System.Threading.Tasks;using Microsoft.Reporting.WinForms;using System.Net.Http.Headers;using System.Windows.Forms;
 namespace ReportesCine.service
 {
     public class DataHttp
@@ -36,7 +37,9 @@ namespace ReportesCine.service
                     return null;
                 }
             }
-        }
+        }
+
+
     }
 
 }
