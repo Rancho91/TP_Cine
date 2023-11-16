@@ -801,9 +801,6 @@ C:\Users\ramir\Desktop\Proyectos Facu\api\TP_Cine\ReportesCine\obj\Debug\CineApi
 C:\Users\ramir\Desktop\Proyectos Facu\api\TP_Cine\ReportesCine\obj\Debug\ReportesCine.Properties.Resources.resources
 C:\Users\ramir\Desktop\Proyectos Facu\api\TP_Cine\ReportesCine\obj\Debug\ReportesCine.csproj.GenerateResource.cache
 C:\Users\ramir\Desktop\Proyectos Facu\api\TP_Cine\ReportesCine\obj\Debug\ReportesCine.csproj.CoreCompileInputs.cache
-<<<<<<< HEAD
-=======
 C:\Users\ramir\Desktop\Proyectos Facu\api\TP_Cine\ReportesCine\obj\Debug\ReportesCine.csproj.CopyComplete
->>>>>>> 98f6bdd9791f6f515855359521fc4ecc13ea1235
 C:\Users\ramir\Desktop\Proyectos Facu\api\TP_Cine\ReportesCine\obj\Debug\ReportesCine.exe
 C:\Users\ramir\Desktop\Proyectos Facu\api\TP_Cine\ReportesCine\obj\Debug\ReportesCine.pdb

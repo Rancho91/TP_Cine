@@ -19,14 +19,12 @@ namespace CineApi.ReportesCine
 {
     public partial class Form1 : Form
     {
-<<<<<<< HEAD
-        private ReportePeliculaGananciaService funcionService;
-=======
+
         private FuncionService funcionService;
 
         private ReporteButacasDisponiblesService reporteDBService;
 
->>>>>>> 058d5b1922e681b97967809802d2dd0bd3cb3d5c
+
         public Form1()
         {
             InitializeComponent();
@@ -80,8 +78,6 @@ namespace CineApi.ReportesCine
                 MessageBox.Show($"Error al obtener datos: {ex.Message}");
             }
             this.reportViewer1.RefreshReport();
-<<<<<<< HEAD
-            funcionService = new ReportePeliculaGananciaService("Ñ",TimeSpan.Parse("00:00:00"),"Ñ");
             llenarComboFunciones();
         }
 
@@ -97,8 +93,6 @@ namespace CineApi.ReportesCine
         private void reportViewer1_Load(object sender, EventArgs e)
         {
 
-=======
->>>>>>> 058d5b1922e681b97967809802d2dd0bd3cb3d5c
         }
 
         private DataTable ConvertListToDataTable(List<ReporteButacasDisponibles> list)
@@ -128,7 +122,7 @@ namespace CineApi.ReportesCine
 
         private async void llenarComboFunciones()
         {
-            List<ReportePeliculasGanancia> lst = await funcionService.GetReport();
+            List<Funciones> lst = await funcionService.Get();
 
             cboFuncionReporte.DataSource = lst;
 
@@ -139,9 +133,6 @@ namespace CineApi.ReportesCine
             cboFuncionReporte.DropDownStyle = ComboBoxStyle.DropDownList;
         }
 
-        private  void reportViewer1_Load(object sender, EventArgs e)
-        {
 
-        }
     }
 }
