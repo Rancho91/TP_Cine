@@ -239,7 +239,10 @@ C:\Users\ramir\Desktop\Proyectos Facu\version ema\TP_Cine\CineApi\obj\Debug\net6
 C:\Users\ramir\Desktop\Proyectos Facu\version ema\TP_Cine\CineApi\obj\Debug\net6.0\CineApi.pdb
 C:\Users\ramir\Desktop\Proyectos Facu\version ema\TP_Cine\CineApi\obj\Debug\net6.0\CineApi.genruntimeconfig.cache
 C:\Users\ramir\Desktop\Proyectos Facu\version ema\TP_Cine\CineApi\obj\Debug\net6.0\ref\CineApi.dll
+<<<<<<< HEAD
 >>>>>>> 41991cbed336e3ffb23b08f712233c5ad0f0160c
+=======
+>>>>>>> 98f6bdd9791f6f515855359521fc4ecc13ea1235
 C:\Users\ramir\Desktop\Proyectos Facu\api\TP_Cine\CineApi\bin\Debug\net6.0\appsettings.Development.json
 C:\Users\ramir\Desktop\Proyectos Facu\api\TP_Cine\CineApi\bin\Debug\net6.0\appsettings.json
 C:\Users\ramir\Desktop\Proyectos Facu\api\TP_Cine\CineApi\bin\Debug\net6.0\CineApi.exe
