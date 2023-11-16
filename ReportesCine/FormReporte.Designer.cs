@@ -96,6 +96,7 @@
             this.reportViewer1.ServerReport.BearerToken = null;
             this.reportViewer1.Size = new System.Drawing.Size(801, 419);
             this.reportViewer1.TabIndex = 6;
+            this.reportViewer1.Load += new System.EventHandler(this.reportViewer1_Load);
             // 
             // Form1
             // 

@@ -25,7 +25,7 @@ namespace CineApi.ReportesCine
         public Form1()
         {
             InitializeComponent();
-            reporteDBService = new ReporteButacasDisponiblesService(1, "Disponible");
+            reporteDBService = new ReporteButacasDisponiblesService(1, "No Disponible");
 
         }
 
@@ -34,27 +34,40 @@ namespace CineApi.ReportesCine
             try
             {
                 List<ReporteButacasDisponibles> lst = await reporteDBService.GetReporte();
+                DataTable dataTable = ConvertListToDataTable(lst);
 
-                reportViewer1.LocalReport.ReportPath = @"C:\Users\Emanuel\Desktop\Cine-App\TP_Cine\ReportesCine\Reportes\Report1.rdlc";
+                reportViewer1.LocalReport.ReportPath = @"C:\Users\ramir\Desktop\Proyectos Facu\version ema\TP_Cine\ReportesCine\Reportes\Report1.rdlc";
                 reportViewer1.LocalReport.DataSources.Add(new ReportDataSource("ButacasDisponiblesDataSet", lst));
 
 
-                List<ReportParameter> paramList = new List<ReportParameter>();
+                //foreach (ReporteButacasDisponibles rep in lst)
+                //{
+                //    List<ReportParameter> paramList = new List<ReportParameter>();
+
+                //    paramList.Add(new ReportParameter("Codigo", rep.Codigo.ToString()));
+                //    paramList.Add(new ReportParameter("Fila", rep.Fila));
+                //    paramList.Add(new ReportParameter("Numero", rep.Numero.ToString()));
+                //    paramList.Add(new ReportParameter("Estado", rep.Estado));
+                //    reportViewer1.LocalReport.SetParameters(paramList);
+
+                //}
+
                 for (int i = 0; i < lst.Count; i++)
                 {
-                    paramList.Clear();
-                    // Suponiendo que ReporteButacasDisponibles tiene propiedades: Codigo, Fila, Numero y Estado
-                    paramList.Add(new ReportParameter("Butaca", lst[i].Codigo.ToString()));
+
+                    List<ReportParameter> paramList = new List<ReportParameter>();
+
+                    paramList.Add(new ReportParameter("Codigo", lst[i].Codigo.ToString()));
                     paramList.Add(new ReportParameter("Fila", lst[i].Fila));
                     paramList.Add(new ReportParameter("Numero", lst[i].Numero.ToString()));
                     paramList.Add(new ReportParameter("Estado", lst[i].Estado));
-
                     reportViewer1.LocalReport.SetParameters(paramList);
+
                 }
+                reportViewer1.RefreshReport();
 
                 funcionService = new FuncionService();
                 llenarComboFunciones();
-                this.reportViewer1.RefreshReport();
             }
             catch (Exception ex)
             {
@@ -63,6 +76,31 @@ namespace CineApi.ReportesCine
             }
             this.reportViewer1.RefreshReport();
         }
+
+        private DataTable ConvertListToDataTable(List<ReporteButacasDisponibles> list)
+        {
+            DataTable dataTable = new DataTable("ButacasDisponiblesDataSet");
+
+            // Agrega las columnas al DataTable (asegúrate de que coincidan con las propiedades de ReporteButacasDisponibles)
+            dataTable.Columns.Add("Butaca", typeof(int));
+            dataTable.Columns.Add("Fila", typeof(string));
+            dataTable.Columns.Add("Numero", typeof(int));
+            dataTable.Columns.Add("Estado", typeof(string));
+
+            // Agrega las filas al DataTable
+            foreach (var item in list)
+            {
+                DataRow row = dataTable.NewRow();
+                row["Butaca"] = item.Codigo;
+                row["Fila"] = item.Fila;
+                row["Numero"] = item.Numero;
+                row["Estado"] = item.Estado;
+                dataTable.Rows.Add(row);
+            }
+
+            return dataTable;
+        }
+
 
         private async void llenarComboFunciones()
         {
@@ -75,6 +113,11 @@ namespace CineApi.ReportesCine
             cboFuncionReporte.ValueMember = "codigo";
 
             cboFuncionReporte.DropDownStyle = ComboBoxStyle.DropDownList;
+        }
+
+        private  void reportViewer1_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

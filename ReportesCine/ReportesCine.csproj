@@ -225,6 +225,7 @@
     <Compile Include="Entidades\Maestras\Pelicula.cs" />
     <Compile Include="Entidades\Maestras\Salas.cs" />
     <Compile Include="Entidades\Reportes\ReporteButacasDisponibles.cs" />
+    <Compile Include="Entidades\Reportes\ReporteFacturasFormaPago.cs" />
     <Compile Include="Entidades\Reportes\ReportePeliculasGanancia.cs" />
     <Compile Include="Entidades\Reportes\reportePeliculasXFecha.cs" />
     <Compile Include="FormReporte.cs">
@@ -238,6 +239,10 @@
     <Compile Include="service\DataHttp.cs" />
     <Compile Include="service\FuncionService.cs" />
     <Compile Include="service\ReporteButacasDisponiblesService.cs" />
+    <Compile Include="service\ReporteFacturasFormaPagoService.cs" />
+    <Compile Include="service\ReportePeliculaGananciaService.cs" />
+    <Compile Include="service\ReportePeliculasFechaHoraService.cs" />
+    <Compile Include="service\ReportePeliculasGeneroClasiService.cs" />
     <Compile Include="SqlServerTypes\Loader.cs" />
     <EmbeddedResource Include="FormReporte.resx">
       <DependentUpon>FormReporte.cs</DependentUpon>
