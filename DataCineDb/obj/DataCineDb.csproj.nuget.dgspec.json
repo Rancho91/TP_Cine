@@ -1,6 +1,7 @@
 {
   "format": 1,
   "restore": {
+<<<<<<< HEAD
     "C:\\Users\\ramir\\Desktop\\Proyectos Facu\\CineApi\\TP_Cine\\DataCineDb\\DataCineDb.csproj": {}
   },
   "projects": {
@@ -12,6 +13,19 @@
         "projectPath": "C:\\Users\\ramir\\Desktop\\Proyectos Facu\\CineApi\\TP_Cine\\DataCineDb\\DataCineDb.csproj",
         "packagesPath": "C:\\Users\\ramir\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\ramir\\Desktop\\Proyectos Facu\\CineApi\\TP_Cine\\DataCineDb\\obj\\",
+=======
+    "C:\\Users\\ramir\\Desktop\\Proyectos Facu\\version ema\\TP_Cine\\DataCineDb\\DataCineDb.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\ramir\\Desktop\\Proyectos Facu\\version ema\\TP_Cine\\DataCineDb\\DataCineDb.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\ramir\\Desktop\\Proyectos Facu\\version ema\\TP_Cine\\DataCineDb\\DataCineDb.csproj",
+        "projectName": "DataCineDb",
+        "projectPath": "C:\\Users\\ramir\\Desktop\\Proyectos Facu\\version ema\\TP_Cine\\DataCineDb\\DataCineDb.csproj",
+        "packagesPath": "C:\\Users\\ramir\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\ramir\\Desktop\\Proyectos Facu\\version ema\\TP_Cine\\DataCineDb\\obj\\",
+>>>>>>> 41991cbed336e3ffb23b08f712233c5ad0f0160c
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\ramir\\AppData\\Roaming\\NuGet\\NuGet.Config",

@@ -1,8 +1,14 @@
 {
   "version": 2,
+<<<<<<< HEAD
   "dgSpecHash": "Lh6canptJChGKsvZjYbl47oN0Ior5DYiG4tOo5FE4QE1l5rEA5KTjljVJ4nxTT8C6VM6peFnPdtCYgpDpOEWJQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\ramir\\Desktop\\Proyectos Facu\\CineApi\\TP_Cine\\DataCineDb\\DataCineDb.csproj",
+=======
+  "dgSpecHash": "q1DyUgX9RwZfWyV7Lpje/YlTsodgP5vWzVEttEMZglUTc5iZcwNbvzd+ZMoasFfAvmpYjs0MRuMjT9zIVFfRJw==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\ramir\\Desktop\\Proyectos Facu\\version ema\\TP_Cine\\DataCineDb\\DataCineDb.csproj",
+>>>>>>> 41991cbed336e3ffb23b08f712233c5ad0f0160c
   "expectedPackageFiles": [
     "C:\\Users\\ramir\\.nuget\\packages\\microsoft.aspnet.webapi.client\\6.0.0\\microsoft.aspnet.webapi.client.6.0.0.nupkg.sha512",
     "C:\\Users\\ramir\\.nuget\\packages\\microsoft.netcore.platforms\\3.1.0\\microsoft.netcore.platforms.3.1.0.nupkg.sha512",

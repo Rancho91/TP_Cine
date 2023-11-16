@@ -15,7 +15,7 @@ namespace DataCineDb.Data
 
         private DbHelper()
         {
-            conexion = new SqlConnection(@"Data Source=.\SQLEXPRESS;Initial Catalog=COMPLEJO_CINE;Integrated Security=True");
+            conexion = new SqlConnection(@"Data Source=DESKTOP-1G25HFQ;Initial Catalog=COMPLEJO_CINE;Integrated Security=True");
 
         }
 
