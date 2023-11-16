@@ -39,17 +39,18 @@ namespace CineApi.ReportesCine
                 reportViewer1.LocalReport.DataSources.Add(new ReportDataSource("ButacasDisponiblesDataSet", lst));
 
 
-                ReportParameter[] param = new ReportParameter[lst.Count];
+                List<ReportParameter> paramList = new List<ReportParameter>();
+                for (int i = 0; i < lst.Count; i++)
+                {
+                    paramList.Clear();
+                    // Suponiendo que ReporteButacasDisponibles tiene propiedades: Codigo, Fila, Numero y Estado
+                    paramList.Add(new ReportParameter("Butaca", lst[i].Codigo.ToString()));
+                    paramList.Add(new ReportParameter("Fila", lst[i].Fila));
+                    paramList.Add(new ReportParameter("Numero", lst[i].Numero.ToString()));
+                    paramList.Add(new ReportParameter("Estado", lst[i].Estado));
 
-                    param[0] = new ReportParameter("Butaca", 1.ToString());
-                    param[1] = new ReportParameter("Fila", "M");
-                    param[2] = new ReportParameter("Numero", 1.ToString());
-                    param[3] = new ReportParameter("Estado", "D");
-
-                    reportViewer1.LocalReport.SetParameters(param[0]);
-                    reportViewer1.LocalReport.SetParameters(param[1]);
-                    reportViewer1.LocalReport.SetParameters(param[2]);
-                    reportViewer1.LocalReport.SetParameters(param[3]);
+                    reportViewer1.LocalReport.SetParameters(paramList);
+                }
 
                 funcionService = new FuncionService();
                 llenarComboFunciones();
