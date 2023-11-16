@@ -1,14 +1,8 @@
 {
   "version": 2,
-<<<<<<< HEAD
-  "dgSpecHash": "ili7WH3rWXdXjbHrLRgGkphDBWGMcQPO1TwmH24B7ydj0XDwLS/MWYUQOlD58WMTBgmAQ5W/qVEe8BYYZyAnGw==",
+  "dgSpecHash": "1QAJao7RGPAz+cEDNMWs2VEBRtzZ0Eah4jhaO1+YICV7nZaDwBOyrRVx7Oj7KCGxR43IdLek3XQIMzd/QQgvUw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\ramir\\Desktop\\Proyectos Facu\\CineApi\\TP_Cine\\CineApi\\CineApi.csproj",
-=======
-  "dgSpecHash": "LPtXu/3s/x8LCP3E7XMwGiCvxz6AaeMStsl/0aQWdSDuVYgmIfBByOSENJJLhKE2lqjfNWn8Xb9mZMqoJo45jw==",
-  "success": true,
-  "projectFilePath": "C:\\Users\\ramir\\Desktop\\Proyectos Facu\\version ema\\TP_Cine\\CineApi\\CineApi.csproj",
->>>>>>> 41991cbed336e3ffb23b08f712233c5ad0f0160c
+  "projectFilePath": "C:\\Users\\ramir\\Desktop\\Proyectos Facu\\ultima\\TP_Cine\\CineApi\\CineApi.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\ramir\\.nuget\\packages\\microsoft.aspnet.webapi.client\\6.0.0\\microsoft.aspnet.webapi.client.6.0.0.nupkg.sha512",
     "C:\\Users\\ramir\\.nuget\\packages\\microsoft.extensions.apidescription.server\\6.0.5\\microsoft.extensions.apidescription.server.6.0.5.nupkg.sha512",
@@ -31,5 +25,12 @@
     "C:\\Users\\ramir\\.nuget\\packages\\system.security.principal.windows\\4.7.0\\system.security.principal.windows.4.7.0.nupkg.sha512",
     "C:\\Users\\ramir\\.nuget\\packages\\system.threading.tasks.extensions\\4.5.4\\system.threading.tasks.extensions.4.5.4.nupkg.sha512"
   ],
-  "logs": []
+  "logs": [
+    {
+      "code": "Undefined",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Problema al leer el archivo de caché C:\\Users\\ramir\\Desktop\\Proyectos Facu\\ultima\\TP_Cine\\CineApi\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
+    }
+  ]
 }

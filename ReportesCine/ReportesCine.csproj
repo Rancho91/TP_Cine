@@ -238,18 +238,12 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="service\DataHttp.cs" />
     <Compile Include="service\FuncionService.cs" />
-<<<<<<< HEAD
     <Compile Include="service\ReportePeliculaGananciaService.cs" />
-=======
     <Compile Include="service\ReporteButacasDisponiblesService.cs" />
-<<<<<<< HEAD
->>>>>>> 058d5b1922e681b97967809802d2dd0bd3cb3d5c
-=======
     <Compile Include="service\ReporteFacturasFormaPagoService.cs" />
     <Compile Include="service\ReportePeliculaGananciaService.cs" />
     <Compile Include="service\ReportePeliculasFechaHoraService.cs" />
     <Compile Include="service\ReportePeliculasGeneroClasiService.cs" />
->>>>>>> 41991cbed336e3ffb23b08f712233c5ad0f0160c
     <Compile Include="SqlServerTypes\Loader.cs" />
     <EmbeddedResource Include="FormReporte.resx">
       <DependentUpon>FormReporte.cs</DependentUpon>

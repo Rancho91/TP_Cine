@@ -669,19 +669,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-<<<<<<< HEAD
-      "projectUniqueName": "C:\\Users\\ramir\\Desktop\\Proyectos Facu\\CineApi\\TP_Cine\\DataCineDb\\DataCineDb.csproj",
+      "projectUniqueName": "C:\\Users\\ramir\\Desktop\\Proyectos Facu\\ultima\\TP_Cine\\DataCineDb\\DataCineDb.csproj",
       "projectName": "DataCineDb",
-      "projectPath": "C:\\Users\\ramir\\Desktop\\Proyectos Facu\\CineApi\\TP_Cine\\DataCineDb\\DataCineDb.csproj",
+      "projectPath": "C:\\Users\\ramir\\Desktop\\Proyectos Facu\\ultima\\TP_Cine\\DataCineDb\\DataCineDb.csproj",
       "packagesPath": "C:\\Users\\ramir\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\ramir\\Desktop\\Proyectos Facu\\CineApi\\TP_Cine\\DataCineDb\\obj\\",
-=======
-      "projectUniqueName": "C:\\Users\\ramir\\Desktop\\Proyectos Facu\\version ema\\TP_Cine\\DataCineDb\\DataCineDb.csproj",
-      "projectName": "DataCineDb",
-      "projectPath": "C:\\Users\\ramir\\Desktop\\Proyectos Facu\\version ema\\TP_Cine\\DataCineDb\\DataCineDb.csproj",
-      "packagesPath": "C:\\Users\\ramir\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\ramir\\Desktop\\Proyectos Facu\\version ema\\TP_Cine\\DataCineDb\\obj\\",
->>>>>>> 41991cbed336e3ffb23b08f712233c5ad0f0160c
+      "outputPath": "C:\\Users\\ramir\\Desktop\\Proyectos Facu\\ultima\\TP_Cine\\DataCineDb\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\ramir\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -738,5 +730,13 @@
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "Undefined",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Problema al leer el archivo de caché C:\\Users\\ramir\\Desktop\\Proyectos Facu\\ultima\\TP_Cine\\DataCineDb\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
+    }
+  ]
 }
