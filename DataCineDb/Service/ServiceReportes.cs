@@ -15,7 +15,7 @@ namespace DataCineDb.Service
     {
         DbHelper helper = DbHelper.ObtenerInstancia();
 
-        public List<ReportePeliculasGanancia> GetReportePeliculasGanancias(int sala, string? genero, int? order)
+        public List<ReportePeliculasGanancia> GetReportePeliculasGanancias(int? sala, string? genero, int? order)
 
         {
             List<ReportePeliculasGanancia> list = new List<ReportePeliculasGanancia>();
@@ -55,15 +55,131 @@ namespace DataCineDb.Service
             foreach(DataRow row in dt.Rows)
             {
                 ReporteButacasDisponibles reporte = new ReporteButacasDisponibles();
-                reporte.Estado = row[4].ToString();
-                reporte.Numero = (int)row[3];
-                reporte.Fila = row[2].ToString();
+                reporte.Estado = row[3].ToString();
+                reporte.Numero = (int)row[2];
+                reporte.Fila = row[1].ToString();
                 reporte.Codigo = (int)row[0];
                 list.Add(reporte);
                  
             }
 
             return list;
+        }
+
+        public List<ReportePeliculasXFecha> reportePeliculasFechaHora(DateTime? fechaInicio, DateTime? fechaFinal, TimeSpan? horario)
+        {
+            List<ReportePeliculasXFecha> list = new List<ReportePeliculasXFecha>();
+            List<Parametros> listParametros = new List<Parametros>();
+
+            if (fechaInicio != null)
+            {
+                listParametros.Add(new Parametros("@fechainicio", fechaInicio));
+            }
+            if(fechaFinal != null)
+            {
+                listParametros.Add(new Parametros("@fechaFinal", fechaFinal));
+            }
+            if(horario != null)
+            {
+                listParametros.Add(new Parametros("@hora", horario));
+            }
+
+            DataTable dt = helper.Consultar("sp_pelicuas_x_fecha_hora", listParametros);
+            foreach(DataRow row in dt.Rows)
+            {
+                ReportePeliculasXFecha fun = new ReportePeliculasXFecha();
+                fun.Codigo = (int)row[0];
+                fun.Pelicula.Nombre = row[1].ToString();
+                fun.Sala.Codigo= (int)row[2];
+                fun.Fecha = DateTime.Parse(row[3].ToString());
+                fun.Pelicula.Clasificacion.Clasificacion = row[4].ToString();
+                fun.Pelicula.Duracion = TimeSpan.Parse(row[5].ToString());
+                fun.Horario = TimeSpan.Parse(row[6].ToString());
+                fun.Idioma.Idioma = row[7].ToString();
+                fun.Subtitulada = row[8].ToString() == "subtitulada";
+                list.Add(fun);
+                
+            }
+            return list;
+
+        }
+
+        public List<ReportePeliculasGanancia> ReporteTodasLasPeliculas(string? genero, string? clasificacion, TimeSpan? duracion)
+        {
+            List<ReportePeliculasGanancia> list = new List<ReportePeliculasGanancia>();
+            List<Parametros> listParametros = new List<Parametros>();
+            if (genero != null)
+            {
+                listParametros.Add(new Parametros("@genero", genero));
+            }
+            if(clasificacion!=null){
+                listParametros.Add(new Parametros("@clasificacion", clasificacion));
+            }
+            if(duracion != null)
+            {
+                listParametros.Add(new Parametros("@duracion", duracion));
+
+            }
+            DataTable dt = helper.Consultar("SP_PELICUAS_X_GENERO", listParametros);
+            foreach(DataRow row in dt.Rows)
+            {
+                ReportePeliculasGanancia rp = new ReportePeliculasGanancia();
+                rp.Genero.Genero = row[0].ToString();
+                rp.Nombre = row[1].ToString();
+                if (row[2] != DBNull.Value)
+                {
+                    rp.Duracion = TimeSpan.Parse(row[2].ToString());
+                }
+                else
+                {
+                    rp.Duracion = TimeSpan.Zero;
+                }
+                rp.Pais.Pais = row[3].ToString();
+                rp.Clasificacion.Clasificacion = row[4].ToString();
+             
+                object valorGanancia = row[6];
+                rp.Ganancia = (valorGanancia != DBNull.Value) ? Convert.ToDecimal(valorGanancia) : 0;
+
+                list.Add(rp);
+            }
+
+            return list;
+
+        }
+
+        public List<ReporteFacturasFormaPago> ReporteFacturaFormaPago(DateTime? fechainicio, DateTime? fechafinal, int? descuento)
+        {
+            List<ReporteFacturasFormaPago> list = new List<ReporteFacturasFormaPago>();
+            List<Parametros> listParametros = new List<Parametros>();
+            if (fechainicio != null)
+            {
+                listParametros.Add(new Parametros("@FECHAINICIO", fechainicio));
+            }
+            if (fechafinal != null)
+            {
+                listParametros.Add(new Parametros("@FECHAFINAL", fechafinal));
+            }
+            if (descuento != null)
+            {
+                listParametros.Add(new Parametros("@DESCUENTO", descuento));
+
+            }
+            DataTable dt = helper.Consultar("SP_CANTIDAD_VENTAS_X_FORMA_PAGO_FECHA", listParametros);
+            foreach (DataRow row in dt.Rows)
+            {
+                ReporteFacturasFormaPago rp = new ReporteFacturasFormaPago();
+                rp.CantVentas = (int)row[0];
+                rp.SumaTotal = (decimal)row[1];
+                rp.totalDescuento = (int)row[2];
+                rp.totalFacturado = (decimal)row[2];
+                rp.cantidadFunciones = (int)row[3];
+                rp.PromedioGananciaFuncion = (decimal)row[4];
+                rp.FormaPago = row[5].ToString();
+                list.Add(rp);
+            }
+
+            return list;
+
         }
     }
 }

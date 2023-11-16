@@ -7,15 +7,12 @@ using System.Threading.Tasks;
 
 namespace DataCineDb.Entidades.Reportes
 {
-    public class ReporteButacasDisponibles:Butacas
+    public class ReportePeliculasXFecha:Funciones
     {
-        
-        public string Estado { get; set; }
-
-        public ReporteButacasDisponibles()
+        public Salas Sala { get; set; }
+        public ReportePeliculasXFecha()
         {
-            Estado = string.Empty;
+            Sala= new Salas();
         }
-
     }
 }

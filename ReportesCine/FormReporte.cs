@@ -40,19 +40,17 @@ namespace CineApi.ReportesCine
 
 
                 ReportParameter[] param = new ReportParameter[lst.Count];
-                for (int i = 0; i < lst.Count; i++)
-                {
-                    param[0] = new ReportParameter("COD_BUTACA", lst[0].Codigo.ToString());
-                    param[1] = new ReportParameter("FILA", lst[2].Fila);
-                    param[2] = new ReportParameter("NUMERO", lst[3].Numero.ToString());
-                    param[3] = new ReportParameter("Estado", lst[4].Estado);
-                }
 
-                reportViewer1.LocalReport.SetParameters(param);
+                    param[0] = new ReportParameter("Butaca", 1.ToString());
+                    param[1] = new ReportParameter("Fila", "M");
+                    param[2] = new ReportParameter("Numero", 1.ToString());
+                    param[3] = new ReportParameter("Estado", "D");
 
+                    reportViewer1.LocalReport.SetParameters(param[0]);
+                    reportViewer1.LocalReport.SetParameters(param[1]);
+                    reportViewer1.LocalReport.SetParameters(param[2]);
+                    reportViewer1.LocalReport.SetParameters(param[3]);
 
-
-                this.reportViewer1.RefreshReport();
                 funcionService = new FuncionService();
                 llenarComboFunciones();
                 this.reportViewer1.RefreshReport();
@@ -62,6 +60,7 @@ namespace CineApi.ReportesCine
                 // Manejar la excepción, por ejemplo, mostrar un mensaje de error o registrarla.
                 MessageBox.Show($"Error al obtener datos: {ex.Message}");
             }
+            this.reportViewer1.RefreshReport();
         }
 
         private async void llenarComboFunciones()

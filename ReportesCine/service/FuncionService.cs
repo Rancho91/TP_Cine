@@ -26,7 +26,6 @@ namespace ReportesCine.service
             {
                 MessageBox.Show(ex.Message);
             }
-            
             return list;
         }
     }

@@ -211,11 +211,6 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ButacasXFuncionDataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ButacasXFuncionDataSet.xsd</DependentUpon>
-    </Compile>
     <Compile Include="Entidades\Auxiliares\Clasificaciones.cs" />
     <Compile Include="Entidades\Auxiliares\Generos.cs" />
     <Compile Include="Entidades\Auxiliares\Idiomas.cs" />
@@ -231,6 +226,7 @@
     <Compile Include="Entidades\Maestras\Salas.cs" />
     <Compile Include="Entidades\Reportes\ReporteButacasDisponibles.cs" />
     <Compile Include="Entidades\Reportes\ReportePeliculasGanancia.cs" />
+    <Compile Include="Entidades\Reportes\reportePeliculasXFecha.cs" />
     <Compile Include="FormReporte.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -256,18 +252,8 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Reportes\Report1.rdlc" />
-    <None Include="ButacasXFuncionDataSet.xsc">
-      <DependentUpon>ButacasXFuncionDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="ButacasXFuncionDataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>ButacasXFuncionDataSet.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="ButacasXFuncionDataSet.xss">
-      <DependentUpon>ButacasXFuncionDataSet.xsd</DependentUpon>
-    </None>
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\ReportesCine.Entidades.Reportes.ReporteButacasDisponibles.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

@@ -18,7 +18,7 @@ namespace CineApi.Controllers
         ServiceReportes service = new ServiceReportes();
         
         [HttpGet("peliculas/{sala}/{genero}/{orden}")]
-        public IActionResult Get(int sala,string genero, int orden)
+        public IActionResult Get(int? sala,string? genero, int? orden)
         {
  // se necsita el Genero de la clase Genero y el numero de la clase Sala,
  // pueden no enviarse, los acepta como nulos (trae sin filtros)
@@ -44,7 +44,7 @@ namespace CineApi.Controllers
 
         [HttpGet("butacas/{funcion}/{estado}")]
 
-        public IActionResult Put(int funcion, string? estado)
+        public IActionResult Get(int funcion, string? estado)
         {
             try
             {
@@ -52,6 +52,70 @@ namespace CineApi.Controllers
                 if (list == null || list.Count == 0)
                 {
                     return BadRequest("No se encontraron datos de géneros.");
+                }
+                return Ok(list);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Excepción: {ex.Message}");
+                Console.WriteLine($"Stack Trace: {ex.StackTrace}");
+                return BadRequest("Se ha producido un error");
+            }
+        }
+
+        [HttpGet("funciones/{fechaInicio}/{fechaFinal}/{hora}")]
+
+        public IActionResult Get(DateTime? fechaInicio, DateTime? fechaFinal,TimeSpan hora )
+        {
+            try
+            {
+                List<ReportePeliculasXFecha> list = service.reportePeliculasFechaHora(fechaInicio, fechaFinal,hora);
+                if (list == null || list.Count == 0)
+                {
+                    return BadRequest("No se encontraron datos de géneros.");
+                }
+                return Ok(list);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Excepción: {ex.Message}");
+                Console.WriteLine($"Stack Trace: {ex.StackTrace}");
+                return BadRequest("Se ha producido un error");
+            }
+        }
+
+
+        [HttpGet("peliculasGeneroClasi/{genero}/{duracion}/{clasificacion}")]
+
+        public IActionResult Get(string? genero, TimeSpan duracion, string clasificacion)
+        {
+            try
+            {
+                List<ReportePeliculasGanancia> list = service.ReporteTodasLasPeliculas(genero, clasificacion, duracion);
+                if (list == null || list.Count == 0)
+                {
+                    return BadRequest("No se encontraron datos del reporte.");
+                }
+                return Ok(list);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Excepción: {ex.Message}");
+                Console.WriteLine($"Stack Trace: {ex.StackTrace}");
+                return BadRequest("Se ha producido un error");
+            }
+        }
+
+        [HttpGet("facturaFormaPago/{fechaInicio}/{fechaFinal}/{descuento}")]
+
+        public IActionResult Get(DateTime? fechaInicio, DateTime? fechaFinal, int? descuento)
+        {
+            try
+            {
+                List<ReporteFacturasFormaPago> list = service.ReporteFacturaFormaPago(fechaInicio, fechaFinal, descuento);
+                if (list == null || list.Count == 0)
+                {
+                    return BadRequest("No se encontraron datos del reporte.");
                 }
                 return Ok(list);
             }
